@@ -1,0 +1,6 @@
+TCGA-GBM | GDC Data Use Certification and dbGaP controlled-access terms apply to protected molecular data | https://portal.gdc.cancer.gov/projects/TCGA-GBM
+CGGA | CGGA data sharing policy | https://www.cgga.org.cn/
+IEDB | IEDB database license and terms | https://www.iedb.org/
+AFND 2020 | freely available repository; source-study terms remain applicable | https://www.allelefrequencies.net/
+gnomAD v4 | gnomAD terms of use | https://gnomad.broadinstitute.org/
+RCSB PDB | CC0 1.0 | https://www.rcsb.org/

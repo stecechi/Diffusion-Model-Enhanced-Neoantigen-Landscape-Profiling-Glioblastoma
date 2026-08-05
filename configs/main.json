@@ -1,0 +1,35 @@
+{
+  "model": {
+    "atom_feature_dim": 48,
+    "hidden_dim": 128,
+    "ipa_layers": 8,
+    "attention_heads": 8,
+    "sequence_width": 1280,
+    "embedding_dim": 256,
+    "lora_rank": 4,
+    "dropout": 0.2,
+    "flow_time": 0.1,
+    "ode_steps": 20
+  },
+  "training": {
+    "world_size": 4,
+    "gpu": "NVIDIA A100 40GB",
+    "per_gpu_batch_size": 32,
+    "gradient_accumulation": 1,
+    "effective_batch_size": 128,
+    "optimizer": "AdamW",
+    "initial_learning_rate": 0.0003,
+    "immunogenicity_learning_rate": 0.00001,
+    "weight_decay": 0.01,
+    "scheduler": "cosine",
+    "phases": [
+      {"name": "structural", "epochs": 100},
+      {"name": "binding", "epochs": 50},
+      {"name": "immunogenicity", "epochs": 30}
+    ],
+    "seeds": [17, 29, 43, 71, 101]
+  },
+  "loss_weights": {"flow": 1.0, "binding": 0.5, "presentation": 0.3, "immunogenicity": 0.2},
+  "thresholds": {"ic50_nm": 500, "immunogenicity": 0.5, "dai": 1.0, "tpm": 1.0, "gnomad_frequency": 0.0001},
+  "actionability_weights": {"binding": 0.25, "immunogenicity": 0.25, "coverage": 0.2, "recurrence": 0.15, "stability": 0.15}
+}
